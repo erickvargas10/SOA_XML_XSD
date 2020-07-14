@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<producto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="ProductoXSD.xsd" id="123">
+    EL PRODUCTO DE SUPERMAXI
+    <codigo>123</codigo>
+    <nombre>mantequilla</nombre>
+    <descripcion id="90">
+        <color></color>
+        <peso></peso>
+        <fecha_ingreso>2018-11-15</fecha_ingreso>
+    </descripcion>
+    <cantidad>33</cantidad>
+    <proveedor>akí</proveedor>
+    <tipo>BHQ</tipo>
+    
+</producto>

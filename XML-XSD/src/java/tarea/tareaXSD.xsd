@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:annotation>
+        <xs:documentation>
+            SCHEMA SALAMI SLICE
+        </xs:documentation>
+    </xs:annotation>
+    
+      <xs:element name="producto">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="codigo"/>
+                <xs:element ref="nombre"/>
+                <xs:element ref="descripcion"/>
+                <xs:element ref="cantidad"/>
+                <xs:element ref="proveedor"/>
+<xs:element ref="tipo"/>
+            </xs:sequence>
+            <xs:attribute type="xs:integer" name="id"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="color" type="xs:string"/>
+    <xs:element name="peso" type="xs:string"/>
+    <xs:element name="fecha_ingreso" type="xs:date"/>
+    <xs:element name="codigo" type="xs:int"/>
+    <xs:element name="nombre" type="xs:string"/>
+    <xs:element name="cantidad" type="xs:int"/>
+    <xs:element name="proveedor" type="xs:string"/>
+    <xs:element name="tipo" type="xs:string"/>
+    
+    <xs:element name="descripcion">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="color"/>
+                <xs:element ref="peso"/>
+                <xs:element ref="fecha_ingreso"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+   
+</xs:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+<xs:element name="producto">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element name="codigo" type="xs:int"/>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="descripcion">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="color" type="xs:string" default="rojo"/>
+                            <xs:element name="peso" type="xs:string" fixed="14gramos"/>
+                            <xs:element name="fecha_ingreso" type="xs:date"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="cantidad" type="restriccion1"/>
+                <xs:element name="proveedor" type="restriccion2"/>
+                <xs:element name="tipo" type="restriccion3"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- Restricciones -->
+    <xs:simpleType name="restriccion1">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxExclusive value="50"/>
+        </xs:restriction>
+    </xs:simpleType> 
+    <xs:simpleType name="restriccion2">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="supermaxi"/>
+            <xs:enumeration value="santa maría"/>
+            <xs:enumeration value="akí"/>
+        </xs:restriction>
+    </xs:simpleType>  
+    <xs:simpleType name="restriccion3">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BHQ"/>
+        </xs:restriction>
+    </xs:simpleType>    
+</xs:schema>
+
+
